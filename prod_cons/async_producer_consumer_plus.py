@@ -100,7 +100,7 @@ def build_retry_decorator(cfg: dict) -> Callable:
     min_wait: int = cfg.get("retry", {}).get("min_wait", 1)
     max_wait: int = cfg.get("retry", {}).get("max_wait", 10)
 
-    return retry()(
+    return retry(
         stop=stop_after_attempt(max_attempt_number=attempts),
         wait=wait_exponential(multiplier=1, min=min_wait, max=max_wait),
         before_sleep=log_retry_attempt,
