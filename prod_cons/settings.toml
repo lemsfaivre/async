@@ -1,0 +1,18 @@
+[general]
+output_file = "output.json"
+global_timeout = 15
+poll_interval = 2
+
+[retry]
+attempts = 4
+min_wait = 1
+max_wait = 5
+
+[apis]
+api1 = "https://jsonplaceholder.typicode.com/todos"
+api2 = "https://jsonplaceholder.typicode.com/postsss"
+
+[logging]
+console = true
+json_file = "logs.jsonl"
+level = "INFO"
